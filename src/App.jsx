@@ -5,13 +5,14 @@ import GameBoard from './components/GameBoard.jsx';
 import Log from './components/Log.jsx';
 import GameOver from './components/GameOver.jsx';
 import { WINNING_COMBINATIONS } from './winning-combinations.js';
+import Avatar from './components/Avatar.jsx';
 
 const SYMBOL_PLAYER1 = 'B';
 const SYMBOL_PLAYER2 = 'V';
 
 const PLAYERS = {
-  [SYMBOL_PLAYER1]: 'Jugador 1',
-  [SYMBOL_PLAYER2]: 'Jugador 2'
+  [SYMBOL_PLAYER1]: 'Calcio',
+  [SYMBOL_PLAYER2]: 'Megachad'
 };
 
 const INITIAL_GAME_BOARD = [
@@ -66,6 +67,41 @@ function deriveWinner(gameBoard, players) {
   return winner;
 }
 
+const personajes = [
+  { name: 'Calcium', 
+    src: '/src/assets/calcium.webp',
+    arma: '/src/assets/weapon/bone.webp'
+  },
+  { name: 'Megachad', 
+    src: '/src/assets/megachad.webp',
+    arma: '/src/assets/weapon/aura.webp'
+  },
+  { name: 'Fox', 
+    src: '/src/assets/fox.webp',
+    arma: '/src/assets/weapon/firestaff.webp'
+  },
+  { name: 'Spaceman', 
+    src: '/src/assets/spaceman.webp',
+    arma: '/src/assets/weapon/black-hole.webp'
+  },
+  { name: 'Bush', 
+    src: '/src/assets/bush.webp',
+    arma: '/src/assets/weapon/sniper-rifle.webp'
+  },
+  { name: 'Cl4nk', 
+    src: '/src/assets/cl4nk.webp',
+    arma: '/src/assets/weapon/revolver.webp'
+  },
+  { name: 'Sir Oofie', 
+    src: '/src/assets/sir-oofie.webp',
+    arma: '/src/assets/weapon/sword.webp'
+  },
+  { name: 'Monke', 
+    src: '/src/assets/monke.webp',
+    arma: '/src/assets/weapon/bananarang.webp'
+  },
+];
+
 function App() {
   const [players, setPlayers] = useState(PLAYERS);
   const [gameTurns, setGameTurns] = useState([]);
@@ -110,12 +146,14 @@ function App() {
             symbol={SYMBOL_PLAYER1}
             isActive={activePlayer === SYMBOL_PLAYER1}
             onChangeName={handlePlayerNameChange}
+            personajes={personajes}
           />
           <Player
             initialName={PLAYERS[SYMBOL_PLAYER2]}
             symbol={SYMBOL_PLAYER2}
             isActive={activePlayer === SYMBOL_PLAYER2}
             onChangeName={handlePlayerNameChange}
+            personajes={personajes}
           />
         </ol>
         {(winner || hasDraw) && (

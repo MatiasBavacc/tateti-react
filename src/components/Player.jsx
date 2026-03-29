@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import Avatar from './Avatar';
 
 export default function Player({
   initialName,
   symbol,
   isActive,
   onChangeName,
+  personajes
 }) {
   const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
@@ -33,6 +35,7 @@ export default function Player({
 
   return (
     <li className={isActive ? 'active' : undefined}>
+      <Avatar personajes={personajes} />
       <span className="player">
         {editablePlayerName}
         <span className="player-symbol">{symbol}</span>
