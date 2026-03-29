@@ -6,6 +6,24 @@ import Log from './components/Log.jsx';
 import GameOver from './components/GameOver.jsx';
 import { WINNING_COMBINATIONS } from './winning-combinations.js';
 
+import calciumImg from './assets/calcium.webp';
+import megachadImg from './assets/megachad.webp';
+import foxImg from './assets/fox.webp';
+import spacemanImg from './assets/spaceman.webp';
+import bushImg from './assets/bush.webp';
+import cl4nkImg from './assets/cl4nk.webp';
+import sirOofieImg from './assets/sir-oofie.webp';
+import monkeImg from './assets/monke.webp';
+
+import boneImg from './assets/weapon/bone.webp';
+import auraImg from './assets/weapon/aura.webp';
+import firestaffImg from './assets/weapon/firestaff.webp';
+import blackHoleImg from './assets/weapon/black-hole.webp';
+import sniperRifleImg from './assets/weapon/sniper-rifle.webp';
+import revolverImg from './assets/weapon/revolver.webp';
+import swordImg from './assets/weapon/sword.webp';
+import bananarangImg from './assets/weapon/bananarang.webp';
+
 const SYMBOL_PLAYER1 = 'B';
 const SYMBOL_PLAYER2 = 'V';
 
@@ -16,14 +34,46 @@ const INITIAL_GAME_BOARD = [
 ];
 
 const personajes = [
-  { name: 'Calcium', src: '/src/assets/calcium.webp', arma: '/src/assets/weapon/bone.webp' },
-  { name: 'Megachad', src: '/src/assets/megachad.webp', arma: '/src/assets/weapon/aura.webp' },
-  { name: 'Fox', src: '/src/assets/fox.webp', arma: '/src/assets/weapon/firestaff.webp' },
-  { name: 'Spaceman', src: '/src/assets/spaceman.webp', arma: '/src/assets/weapon/black-hole.webp' },
-  { name: 'Bush', src: '/src/assets/bush.webp', arma: '/src/assets/weapon/sniper-rifle.webp' },
-  { name: 'Cl4nk', src: '/src/assets/cl4nk.webp', arma: '/src/assets/weapon/revolver.webp' },
-  { name: 'Sir Oofie', src: '/src/assets/sir-oofie.webp', arma: '/src/assets/weapon/sword.webp' },
-  { name: 'Monke', src: '/src/assets/monke.webp', arma: '/src/assets/weapon/bananarang.webp' },
+  {
+    name: 'Calcium',
+    src: calciumImg,
+    arma: boneImg
+  },
+  {
+    name: 'Megachad',
+    src: megachadImg,
+    arma: auraImg
+  },
+  {
+    name: 'Fox',
+    src: foxImg,
+    arma: firestaffImg
+  },
+  {
+    name: 'Spaceman',
+    src: spacemanImg,
+    arma: blackHoleImg
+  },
+  {
+    name: 'Bush',
+    src: bushImg,
+    arma: sniperRifleImg
+  },
+  {
+    name: 'Cl4nk',
+    src: cl4nkImg,
+    arma: revolverImg
+  },
+  {
+    name: 'Sir Oofie',
+    src: sirOofieImg,
+    arma: swordImg
+  },
+  {
+    name: 'Monke',
+    src: monkeImg,
+    arma: bananarangImg
+  }
 ];
 
 function deriveActivePlayer(gameTurns) {
