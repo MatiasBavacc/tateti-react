@@ -409,3 +409,9 @@ ol {
   box-shadow: 0 0 10px rgba(246, 227, 90, 0.8);
   transform: scale(1.05);
 }
+
+.btn-juego img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

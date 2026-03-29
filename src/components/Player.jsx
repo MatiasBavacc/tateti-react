@@ -2,45 +2,43 @@ import { useState } from 'react';
 import Avatar from './Avatar';
 
 export default function Player({
-  initialName,
   symbol,
+  player,
   isActive,
   onChangeName,
-  personajes
+  personajes,
+  onSelectCharacter
 }) {
-  const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
 
   function handleEditClick() {
-    setIsEditing((editing) => !editing);
-
-    if (isEditing) {
-      onChangeName(symbol, playerName);
-    }
+    setIsEditing(editing => !editing);
   }
 
   function handleChange(event) {
-    setPlayerName(event.target.value);
-  }
-
-  let editablePlayerName = <span className="player-name">{playerName}</span>;
-  // let btnCaption = 'Edit';
-
-  if (isEditing) {
-    editablePlayerName = (
-      <input type="text" required value={playerName} onChange={handleChange} />
-    );
-    // btnCaption = 'Save';
+    onChangeName(symbol, event.target.value);
   }
 
   return (
     <li className={isActive ? 'active' : undefined}>
-      <Avatar personajes={personajes} />
+      <Avatar
+        personajes={personajes}
+        selected={player}
+        onSelect={(p) => onSelectCharacter(symbol, p)}
+      />
+
       <span className="player">
-        {editablePlayerName}
+        {isEditing ? (
+          <input value={player.name} onChange={handleChange} />
+        ) : (
+          <span className="player-name">{player.name}</span>
+        )}
         <span className="player-symbol">{symbol}</span>
       </span>
-      <button onClick={handleEditClick}>{isEditing ? 'Save' : 'Edit'}</button>
+
+      <button onClick={handleEditClick}>
+        {isEditing ? 'Save' : 'Edit'}
+      </button>
     </li>
   );
 }
