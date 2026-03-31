@@ -345,6 +345,7 @@ ol {
 }
 
 #avatar {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -367,7 +368,7 @@ ol {
 
 .avatar-options {
   position: absolute;
-  top: 22%;
+  top: 110%; /* 👈 debajo de SU avatar */
   left: 0;
 
   display: grid;
