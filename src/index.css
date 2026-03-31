@@ -368,7 +368,7 @@ ol {
 
 .avatar-options {
   position: absolute;
-  top: 110%; /* 👈 debajo de SU avatar */
+  top: 110%;
   left: 0;
 
   display: grid;
