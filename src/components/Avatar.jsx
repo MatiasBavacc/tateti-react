@@ -21,7 +21,7 @@ export default function Avatar({ personajes, selected, onSelect }) {
               alt={p.name}
               className={selected?.src === p.src ? 'selected' : ''}
               onClick={() => {
-                onSelect(p); // 🔥 sube el cambio
+                onSelect(p);
                 setOpen(false);
               }}
             />

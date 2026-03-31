@@ -330,7 +330,6 @@ ol {
   }
 }
 
-/* Fancy animation for showing the "Game Over" element */
 @keyframes pop-in {
   0% {
     transform: scale(0);
@@ -345,14 +344,12 @@ ol {
   }
 }
 
-
 #avatar {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Imagen principal */
 #avatar img {
   width: 100px;
   height: 100px;
@@ -367,10 +364,10 @@ ol {
   box-shadow: 0 0 15px rgba(246, 227, 90, 0.6);
 }
 
-/* Dropdown flotante */
+
 .avatar-options {
   position: absolute;
-  top: 22%; /* abajo del avatar */
+  top: 22%;
   left: 0;
 
   display: grid;
@@ -384,10 +381,9 @@ ol {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   animation: pop-in 0.2s ease-out;
 
-  z-index: 10; /* clave para que quede arriba */
+  z-index: 10;
 }
 
-/* Cada avatar */
 .avatar-options img {
   width: 60px;
   height: 60px;
@@ -397,13 +393,11 @@ ol {
   transition: all 0.2s;
 }
 
-/* Hover */
 .avatar-options img:hover {
   transform: scale(1.1);
   border-color: #f8c031;
 }
 
-/* Seleccionado */
 .avatar-options img.selected {
   border-color: #f6e35a;
   box-shadow: 0 0 10px rgba(246, 227, 90, 0.8);

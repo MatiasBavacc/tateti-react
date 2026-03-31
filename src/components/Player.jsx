@@ -33,7 +33,7 @@ export default function Player({
         ) : (
           <span className="player-name">{player.name}</span>
         )}
-        <span className="player-symbol">{symbol}</span>
+        {/* <span className="player-symbol">{symbol}</span> */}
       </span>
 
       <button onClick={handleEditClick}>
